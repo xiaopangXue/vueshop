@@ -7,10 +7,25 @@ Vue.use(vueResource);
 
 // 全局设置 ajax请求的根域名
 Vue.http.options.root = "http://127.0.0.1:3000/";
+//可以全局设置post表单的传值方式
+// Vue.http.options.emulateJSON = true;
 
 //引入vue-router路由
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
+
+//按需引入vant的标签页组件
+import { Tab, Tabs } from 'vant';
+Vue.use(Tab).use(Tabs);
+
+//导入vant相关样式
+import 'vant/lib/index.css';
+
+//引入vue-preview
+import VuePreview from 'vue-preview';
+// defalut install
+Vue.use(VuePreview);
+
 
 // 引入路由模块
 import router from './router.js';
@@ -37,17 +52,29 @@ import router from './router.js';
 //   linkActiveClass:'mui-active'
 // });
 
+//引入moment模块
+import moment from 'moment';
+//定义全局过滤器
+Vue.filter('dateFormat', function(dateStr, pattern="YYYY-MM-DD HH:mm:ss"){
+  return moment(dateStr).format(pattern);
+});
+
 //引入轮播图相关
 import { Swipe, SwipeItem } from 'mint-ui';
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 
+//引入懒加载
+import { Lazyload } from 'mint-ui';
+Vue.use(Lazyload);
+
 //导入app.vue组件
 import app from './app.vue';
 
 //引入mint-ui相关组件
-import { Header } from 'mint-ui';
+import { Header,Button } from 'mint-ui';
 Vue.component(Header.name, Header);
+Vue.component(Button.name, Button);
 //css一般是按需引入，js引入整个文件
 import 'mint-ui/lib/style.css';
 
