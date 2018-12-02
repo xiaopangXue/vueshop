@@ -9,6 +9,10 @@ import newslist from './components/news/newslist.vue';
 import newsdetail from './components/news/newsdetail.vue';
 import photolist from './components/photo/photolist.vue';
 import photodetail from './components/photo/photodetail.vue';
+import goodslist from './components/goods/goodslist.vue';
+import goodsdetail from './components/goods/goodsdetail.vue';
+import goodsdesc from './components/goods/goodsdesc.vue';
+import goodscomment from './components/goods/goodscomment.vue';
 
 //定义路由匹配的组件
 var router = new VueRouter({
@@ -23,6 +27,10 @@ var router = new VueRouter({
     {path:"/home/newsdetail/:id", component:newsdetail},
     {path:"/home/photolist", component:photolist},
     {path:"/home/photodetail/:id", component:photodetail},
+    {path:"/home/goodslist/", component:goodslist},
+    {path:"/home/goodsdetail/:id", component:goodsdetail},
+    {path:"/home/goodsdesc/:id", component:goodsdesc},
+    {path:"/home/goodscomment/:id", component:goodscomment},
   ],
   //当触发路由的时候，为触发的路由加上一个类，以示高亮
   linkActiveClass:'mui-active'

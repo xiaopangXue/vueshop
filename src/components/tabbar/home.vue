@@ -1,11 +1,12 @@
 <template>
   <div class="home-container">
     <!-- 首页轮播图 -->
-    <mt-swipe :auto="2000">
+    <lunbo :lunbo="lunbo"></lunbo>
+    <!-- <mt-swipe :auto="2000">
       <mt-swipe-item v-for="item in lunbo" :key="item.img">
         <img :src="item.img" alt="">
       </mt-swipe-item>
-    </mt-swipe>
+    </mt-swipe> -->
 
     <!-- 首页九宫格 -->
     <ul class="mui-table-view mui-grid-view mui-grid-9">
@@ -20,10 +21,10 @@
           <div class="mui-media-body">图片分享</div>
         </router-link></li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
+        <router-link to="/home/goodslist">
           <img src="../../images/menu3.png" alt="">
           <div class="mui-media-body">商品购买</div>
-        </a></li>
+        </router-link></li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
           <img src="../../images/menu4.png" alt="">
@@ -44,6 +45,8 @@
 </template>
 
 <script>
+  // 引入轮播图模块
+  import lunbo from '../common/lunbo.vue';
   export default {
     data() {
       return {
@@ -62,19 +65,15 @@
           }
         });
       }
+    },
+    components:{
+      lunbo
     }
   }
 </script>
 
 <style lang="scss" scoped>
   .home-container {
-    .mint-swipe {
-      height: 200px;
-    }
-
-    img {
-      width: 100%;
-    }
 
     .mui-grid-9 {
       background-color: #fff;

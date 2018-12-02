@@ -55,7 +55,6 @@ import {Toast} from 'mint-ui';
       font-size: 16px;
       color:red;
       // font-weight: bold;
-      text-align: center;
       padding: 8px 0px;
     }
     .title{
@@ -65,8 +64,11 @@ import {Toast} from 'mint-ui';
         float:right;
       }
     }
-    .content{
-      padding: 5px 0;
+    // .content{
+    //   padding: 5px 0;
+    // }
+    /deep/ img{
+      width:100%;
     }
 
   }
